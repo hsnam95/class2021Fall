@@ -1,0 +1,57 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "import.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyP3LKbTFjsyImi1W+ZPFKmI",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/hsnam95/class2021Spring/blob/main/import.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "JXicrkYOzPRo"
+      },
+      "source": [
+        "import numpy as np\n",
+        "n = np.random.randn(100)"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "oKT4vn4MwyLA"
+      },
+      "source": [
+        "import matplotlib\n",
+        "import matplotlib.pyplot\n",
+        "from matplotlib import pyplot\n",
+        "from matplotlib.pyplot import hist"
+      ],
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
