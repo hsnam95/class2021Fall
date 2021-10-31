@@ -1,0 +1,1141 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    },
+    "language_info": {
+      "codemirror_mode": {
+        "name": "ipython",
+        "version": 3
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.7.1"
+    },
+    "colab": {
+      "name": "numpy.ipynb",
+      "provenance": [],
+      "include_colab_link": true
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/hsnam95/class2021Spring/blob/main/numpy.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "e-2S1OhwShA_"
+      },
+      "source": [
+        "# NumPy basics"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "japnNanbShBA"
+      },
+      "source": [
+        "## 1. Creation"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "5ap7xyofShBB"
+      },
+      "source": [
+        "import numpy as np\n",
+        "import matplotlib.pyplot as plt"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "xJS2wUSzShBB",
+        "outputId": "fb8bed28-3194-4ed9-a808-1045a175aa17"
+      },
+      "source": [
+        "np.empty([2,3], dtype='int')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[8, 0, 0],\n",
+              "       [0, 0, 0]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 3
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "XKkV6Am7ShBB",
+        "outputId": "baf7822e-0260-4902-a16b-3d38e36f8e26"
+      },
+      "source": [
+        "np.zeros([2,3])"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[0., 0., 0.],\n",
+              "       [0., 0., 0.]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 4
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "EjC88C75ShBC",
+        "outputId": "53d3d9dc-7f42-4f45-e0a6-2059df674aa9"
+      },
+      "source": [
+        "np.arange(0,10,2, dtype='float64')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([0., 2., 4., 6., 8.])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 5
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "-MwkCEjTShBC",
+        "outputId": "b7abdade-1320-488c-e805-6a98cae8c125"
+      },
+      "source": [
+        "np.linspace(0,10,6, dtype=float)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([ 0.,  2.,  4.,  6.,  8., 10.])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 6
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "2rqpSPZCShBC",
+        "outputId": "183fe1d0-6c67-4a64-ca21-1c5beb1f573c"
+      },
+      "source": [
+        "X = np.array([[1,2,3],[4,5,6]])\n",
+        "X"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[1, 2, 3],\n",
+              "       [4, 5, 6]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 7
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "2IZcYVgpShBD",
+        "outputId": "7ec4bd94-98a8-4cb4-db23-9ff5aa701195"
+      },
+      "source": [
+        "X.astype(np.float64)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[1., 2., 3.],\n",
+              "       [4., 5., 6.]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 8
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Xm5y2XPRShBD",
+        "outputId": "bd479cad-6e00-4f8a-dabc-13303451fe8a"
+      },
+      "source": [
+        "np.zeros_like(X)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[0, 0, 0],\n",
+              "       [0, 0, 0]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 9
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "z1oOAB6dShBD",
+        "outputId": "799a2917-1888-497f-bbc8-522c7a62415e"
+      },
+      "source": [
+        "data = np.random.normal(0,1, 100)\n",
+        "print(data)\n",
+        "plt.hist(data, bins=10)\n",
+        "plt.show()"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "[-0.8398779  -0.66062864  1.30115222  0.50450206  0.95667305  0.60700552\n",
+            " -1.01855037  0.95351948  0.08821886  0.99512932  0.41601486  0.60358232\n",
+            " -1.38789209  0.29844135  0.57459243  0.22407801  0.88837517  1.17633349\n",
+            "  0.56068165  2.05564786  1.08076566  0.31183736 -0.64344222  0.9709739\n",
+            " -0.47544633 -1.70769647  1.00774162 -1.34928956 -1.6282407  -0.19706846\n",
+            " -0.02835946 -1.5466965   0.26731914 -0.00338448 -0.54668531 -0.64565518\n",
+            " -2.41783182 -1.09289534 -1.13593424 -1.35908579 -0.04977131  0.07063047\n",
+            "  0.13563216 -0.57646697 -0.01080657 -0.16509508 -1.4860257   0.32366803\n",
+            "  0.17495132  0.54037639 -0.45249398 -0.94513949  0.09107664 -0.09690239\n",
+            "  0.04488749 -1.06009831 -0.3998957   1.33848238  0.66665498 -0.98073074\n",
+            "  1.11223601 -0.1388641   0.38457044  0.59639466 -0.11875297  0.10574101\n",
+            "  1.61805566  1.25025494 -0.87618395  0.83266569  1.59814316 -1.71705042\n",
+            " -0.54227006 -1.11169427 -0.55534861  0.83079971 -1.13066581  0.39353686\n",
+            "  1.48271714 -2.92470339  1.19285915 -0.03397218  1.7172698   1.67298858\n",
+            " -2.23940405 -1.17391172 -0.97346826 -0.70007253  0.8866518   0.51946561\n",
+            " -0.02202387 -0.37008492  0.66716361  0.87427593  0.18242455 -2.01162127\n",
+            "  1.07647129  0.00683464  1.10721925  0.10419802]\n"
+          ],
+          "name": "stdout"
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "image/png": "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\n",
+            "text/plain": [
+              "<Figure size 432x288 with 1 Axes>"
+            ]
+          },
+          "metadata": {
+            "tags": [],
+            "needs_background": "light"
+          }
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "G0exvwBbShBE"
+      },
+      "source": [
+        "## 2. Manipulation"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "HgQmRXzMShBE",
+        "outputId": "72cd172c-7d6e-4d31-e02f-5fff59b1a59f"
+      },
+      "source": [
+        "X = np.ones([2, 3, 4])\n",
+        "X"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[[1., 1., 1., 1.],\n",
+              "        [1., 1., 1., 1.],\n",
+              "        [1., 1., 1., 1.]],\n",
+              "\n",
+              "       [[1., 1., 1., 1.],\n",
+              "        [1., 1., 1., 1.],\n",
+              "        [1., 1., 1., 1.]]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 11
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "O-wDF4vEShBE",
+        "outputId": "64d0bf8e-d25c-406f-d29f-c4316910e756"
+      },
+      "source": [
+        "Y = X.reshape(-1, 3, 2)\n",
+        "Y"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[[1., 1.],\n",
+              "        [1., 1.],\n",
+              "        [1., 1.]],\n",
+              "\n",
+              "       [[1., 1.],\n",
+              "        [1., 1.],\n",
+              "        [1., 1.]],\n",
+              "\n",
+              "       [[1., 1.],\n",
+              "        [1., 1.],\n",
+              "        [1., 1.]],\n",
+              "\n",
+              "       [[1., 1.],\n",
+              "        [1., 1.],\n",
+              "        [1., 1.]]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 22
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "f1QGwVduShBE",
+        "outputId": "3386920c-f786-4767-da93-2c3b0dd676c8"
+      },
+      "source": [
+        "np.allclose(X.reshape(-1, 3, 2), Y)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "True"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 23
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "_4QCUpttShBF"
+      },
+      "source": [
+        "assert np.allclose(X.reshape(-1, 3, 2), Y)"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Hru2lI-tShBF"
+      },
+      "source": [
+        "## 3. NumPy I/O"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "msE1ANUYShBF"
+      },
+      "source": [
+        "a = np.random.randint(0, 10, [2, 3])\n",
+        "b = np.random.random([2, 3])\n",
+        "np.savez(\"test\", a, b)"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "3l0iXfmUShBF",
+        "outputId": "5fe2bc07-8446-43fa-e88d-0aa9caf48856"
+      },
+      "source": [
+        "!ls -al test*"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "-rw-r--r--  1 jookai  staff     562 Apr  2 00:35 test.npz\n",
+            "-rw-r--r--  1 jookai  staff  123438 Mar 14 23:19 test.wav\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "a5USScB1ShBF",
+        "outputId": "1f399f57-6c91-471c-e359-f88ec0d2385e"
+      },
+      "source": [
+        "del a, b\n",
+        "%who  # Print all interactive variables"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "No variables match your requested type.\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "mPlh78KvShBG",
+        "outputId": "22dd7701-1fa8-4ee9-eab0-886a78976692"
+      },
+      "source": [
+        "npzfiles = np.load(\"test.npz\")\n",
+        "npzfiles.files"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "['arr_0', 'arr_1']"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 46
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "b0zYFFipShBG",
+        "outputId": "05f45053-f2db-4428-c4e5-04362a03cf87"
+      },
+      "source": [
+        "npzfiles['arr_0']"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[1, 5, 2],\n",
+              "       [1, 7, 0]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 48
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "ZsH2_VD0nPVC",
+        "outputId": "25103c1d-77d8-43a6-c0ab-5f7b58dc5222",
+        "colab": {
+          "resources": {
+            "http://localhost:8080/nbextensions/google.colab/files.js": {
+              "data": "Ly8gQ29weXJpZ2h0IDIwMTcgR29vZ2xlIExMQwovLwovLyBMaWNlbnNlZCB1bmRlciB0aGUgQXBhY2hlIExpY2Vuc2UsIFZlcnNpb24gMi4wICh0aGUgIkxpY2Vuc2UiKTsKLy8geW91IG1heSBub3QgdXNlIHRoaXMgZmlsZSBleGNlcHQgaW4gY29tcGxpYW5jZSB3aXRoIHRoZSBMaWNlbnNlLgovLyBZb3UgbWF5IG9idGFpbiBhIGNvcHkgb2YgdGhlIExpY2Vuc2UgYXQKLy8KLy8gICAgICBodHRwOi8vd3d3LmFwYWNoZS5vcmcvbGljZW5zZXMvTElDRU5TRS0yLjAKLy8KLy8gVW5sZXNzIHJlcXVpcmVkIGJ5IGFwcGxpY2FibGUgbGF3IG9yIGFncmVlZCB0byBpbiB3cml0aW5nLCBzb2Z0d2FyZQovLyBkaXN0cmlidXRlZCB1bmRlciB0aGUgTGljZW5zZSBpcyBkaXN0cmlidXRlZCBvbiBhbiAiQVMgSVMiIEJBU0lTLAovLyBXSVRIT1VUIFdBUlJBTlRJRVMgT1IgQ09ORElUSU9OUyBPRiBBTlkgS0lORCwgZWl0aGVyIGV4cHJlc3Mgb3IgaW1wbGllZC4KLy8gU2VlIHRoZSBMaWNlbnNlIGZvciB0aGUgc3BlY2lmaWMgbGFuZ3VhZ2UgZ292ZXJuaW5nIHBlcm1pc3Npb25zIGFuZAovLyBsaW1pdGF0aW9ucyB1bmRlciB0aGUgTGljZW5zZS4KCi8qKgogKiBAZmlsZW92ZXJ2aWV3IEhlbHBlcnMgZm9yIGdvb2dsZS5jb2xhYiBQeXRob24gbW9kdWxlLgogKi8KKGZ1bmN0aW9uKHNjb3BlKSB7CmZ1bmN0aW9uIHNwYW4odGV4dCwgc3R5bGVBdHRyaWJ1dGVzID0ge30pIHsKICBjb25zdCBlbGVtZW50ID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnc3BhbicpOwogIGVsZW1lbnQudGV4dENvbnRlbnQgPSB0ZXh0OwogIGZvciAoY29uc3Qga2V5IG9mIE9iamVjdC5rZXlzKHN0eWxlQXR0cmlidXRlcykpIHsKICAgIGVsZW1lbnQuc3R5bGVba2V5XSA9IHN0eWxlQXR0cmlidXRlc1trZXldOwogIH0KICByZXR1cm4gZWxlbWVudDsKfQoKLy8gTWF4IG51bWJlciBvZiBieXRlcyB3aGljaCB3aWxsIGJlIHVwbG9hZGVkIGF0IGEgdGltZS4KY29uc3QgTUFYX1BBWUxPQURfU0laRSA9IDEwMCAqIDEwMjQ7CgpmdW5jdGlvbiBfdXBsb2FkRmlsZXMoaW5wdXRJZCwgb3V0cHV0SWQpIHsKICBjb25zdCBzdGVwcyA9IHVwbG9hZEZpbGVzU3RlcChpbnB1dElkLCBvdXRwdXRJZCk7CiAgY29uc3Qgb3V0cHV0RWxlbWVudCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKG91dHB1dElkKTsKICAvLyBDYWNoZSBzdGVwcyBvbiB0aGUgb3V0cHV0RWxlbWVudCB0byBtYWtlIGl0IGF2YWlsYWJsZSBmb3IgdGhlIG5leHQgY2FsbAogIC8vIHRvIHVwbG9hZEZpbGVzQ29udGludWUgZnJvbSBQeXRob24uCiAgb3V0cHV0RWxlbWVudC5zdGVwcyA9IHN0ZXBzOwoKICByZXR1cm4gX3VwbG9hZEZpbGVzQ29udGludWUob3V0cHV0SWQpOwp9CgovLyBUaGlzIGlzIHJvdWdobHkgYW4gYXN5bmMgZ2VuZXJhdG9yIChub3Qgc3VwcG9ydGVkIGluIHRoZSBicm93c2VyIHlldCksCi8vIHdoZXJlIHRoZXJlIGFyZSBtdWx0aXBsZSBhc3luY2hyb25vdXMgc3RlcHMgYW5kIHRoZSBQeXRob24gc2lkZSBpcyBnb2luZwovLyB0byBwb2xsIGZvciBjb21wbGV0aW9uIG9mIGVhY2ggc3RlcC4KLy8gVGhpcyB1c2VzIGEgUHJvbWlzZSB0byBibG9jayB0aGUgcHl0aG9uIHNpZGUgb24gY29tcGxldGlvbiBvZiBlYWNoIHN0ZXAsCi8vIHRoZW4gcGFzc2VzIHRoZSByZXN1bHQgb2YgdGhlIHByZXZpb3VzIHN0ZXAgYXMgdGhlIGlucHV0IHRvIHRoZSBuZXh0IHN0ZXAuCmZ1bmN0aW9uIF91cGxvYWRGaWxlc0NvbnRpbnVlKG91dHB1dElkKSB7CiAgY29uc3Qgb3V0cHV0RWxlbWVudCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKG91dHB1dElkKTsKICBjb25zdCBzdGVwcyA9IG91dHB1dEVsZW1lbnQuc3RlcHM7CgogIGNvbnN0IG5leHQgPSBzdGVwcy5uZXh0KG91dHB1dEVsZW1lbnQubGFzdFByb21pc2VWYWx1ZSk7CiAgcmV0dXJuIFByb21pc2UucmVzb2x2ZShuZXh0LnZhbHVlLnByb21pc2UpLnRoZW4oKHZhbHVlKSA9PiB7CiAgICAvLyBDYWNoZSB0aGUgbGFzdCBwcm9taXNlIHZhbHVlIHRvIG1ha2UgaXQgYXZhaWxhYmxlIHRvIHRoZSBuZXh0CiAgICAvLyBzdGVwIG9mIHRoZSBnZW5lcmF0b3IuCiAgICBvdXRwdXRFbGVtZW50Lmxhc3RQcm9taXNlVmFsdWUgPSB2YWx1ZTsKICAgIHJldHVybiBuZXh0LnZhbHVlLnJlc3BvbnNlOwogIH0pOwp9CgovKioKICogR2VuZXJhdG9yIGZ1bmN0aW9uIHdoaWNoIGlzIGNhbGxlZCBiZXR3ZWVuIGVhY2ggYXN5bmMgc3RlcCBvZiB0aGUgdXBsb2FkCiAqIHByb2Nlc3MuCiAqIEBwYXJhbSB7c3RyaW5nfSBpbnB1dElkIEVsZW1lbnQgSUQgb2YgdGhlIGlucHV0IGZpbGUgcGlja2VyIGVsZW1lbnQuCiAqIEBwYXJhbSB7c3RyaW5nfSBvdXRwdXRJZCBFbGVtZW50IElEIG9mIHRoZSBvdXRwdXQgZGlzcGxheS4KICogQHJldHVybiB7IUl0ZXJhYmxlPCFPYmplY3Q+fSBJdGVyYWJsZSBvZiBuZXh0IHN0ZXBzLgogKi8KZnVuY3Rpb24qIHVwbG9hZEZpbGVzU3RlcChpbnB1dElkLCBvdXRwdXRJZCkgewogIGNvbnN0IGlucHV0RWxlbWVudCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGlucHV0SWQpOwogIGlucHV0RWxlbWVudC5kaXNhYmxlZCA9IGZhbHNlOwoKICBjb25zdCBvdXRwdXRFbGVtZW50ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQob3V0cHV0SWQpOwogIG91dHB1dEVsZW1lbnQuaW5uZXJIVE1MID0gJyc7CgogIGNvbnN0IHBpY2tlZFByb21pc2UgPSBuZXcgUHJvbWlzZSgocmVzb2x2ZSkgPT4gewogICAgaW5wdXRFbGVtZW50LmFkZEV2ZW50TGlzdGVuZXIoJ2NoYW5nZScsIChlKSA9PiB7CiAgICAgIHJlc29sdmUoZS50YXJnZXQuZmlsZXMpOwogICAgfSk7CiAgfSk7CgogIGNvbnN0IGNhbmNlbCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2J1dHRvbicpOwogIGlucHV0RWxlbWVudC5wYXJlbnRFbGVtZW50LmFwcGVuZENoaWxkKGNhbmNlbCk7CiAgY2FuY2VsLnRleHRDb250ZW50ID0gJ0NhbmNlbCB1cGxvYWQnOwogIGNvbnN0IGNhbmNlbFByb21pc2UgPSBuZXcgUHJvbWlzZSgocmVzb2x2ZSkgPT4gewogICAgY2FuY2VsLm9uY2xpY2sgPSAoKSA9PiB7CiAgICAgIHJlc29sdmUobnVsbCk7CiAgICB9OwogIH0pOwoKICAvLyBXYWl0IGZvciB0aGUgdXNlciB0byBwaWNrIHRoZSBmaWxlcy4KICBjb25zdCBmaWxlcyA9IHlpZWxkIHsKICAgIHByb21pc2U6IFByb21pc2UucmFjZShbcGlja2VkUHJvbWlzZSwgY2FuY2VsUHJvbWlzZV0pLAogICAgcmVzcG9uc2U6IHsKICAgICAgYWN0aW9uOiAnc3RhcnRpbmcnLAogICAgfQogIH07CgogIGNhbmNlbC5yZW1vdmUoKTsKCiAgLy8gRGlzYWJsZSB0aGUgaW5wdXQgZWxlbWVudCBzaW5jZSBmdXJ0aGVyIHBpY2tzIGFyZSBub3QgYWxsb3dlZC4KICBpbnB1dEVsZW1lbnQuZGlzYWJsZWQgPSB0cnVlOwoKICBpZiAoIWZpbGVzKSB7CiAgICByZXR1cm4gewogICAgICByZXNwb25zZTogewogICAgICAgIGFjdGlvbjogJ2NvbXBsZXRlJywKICAgICAgfQogICAgfTsKICB9CgogIGZvciAoY29uc3QgZmlsZSBvZiBmaWxlcykgewogICAgY29uc3QgbGkgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdsaScpOwogICAgbGkuYXBwZW5kKHNwYW4oZmlsZS5uYW1lLCB7Zm9udFdlaWdodDogJ2JvbGQnfSkpOwogICAgbGkuYXBwZW5kKHNwYW4oCiAgICAgICAgYCgke2ZpbGUudHlwZSB8fCAnbi9hJ30pIC0gJHtmaWxlLnNpemV9IGJ5dGVzLCBgICsKICAgICAgICBgbGFzdCBtb2RpZmllZDogJHsKICAgICAgICAgICAgZmlsZS5sYXN0TW9kaWZpZWREYXRlID8gZmlsZS5sYXN0TW9kaWZpZWREYXRlLnRvTG9jYWxlRGF0ZVN0cmluZygpIDoKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgJ24vYSd9IC0gYCkpOwogICAgY29uc3QgcGVyY2VudCA9IHNwYW4oJzAlIGRvbmUnKTsKICAgIGxpLmFwcGVuZENoaWxkKHBlcmNlbnQpOwoKICAgIG91dHB1dEVsZW1lbnQuYXBwZW5kQ2hpbGQobGkpOwoKICAgIGNvbnN0IGZpbGVEYXRhUHJvbWlzZSA9IG5ldyBQcm9taXNlKChyZXNvbHZlKSA9PiB7CiAgICAgIGNvbnN0IHJlYWRlciA9IG5ldyBGaWxlUmVhZGVyKCk7CiAgICAgIHJlYWRlci5vbmxvYWQgPSAoZSkgPT4gewogICAgICAgIHJlc29sdmUoZS50YXJnZXQucmVzdWx0KTsKICAgICAgfTsKICAgICAgcmVhZGVyLnJlYWRBc0FycmF5QnVmZmVyKGZpbGUpOwogICAgfSk7CiAgICAvLyBXYWl0IGZvciB0aGUgZGF0YSB0byBiZSByZWFkeS4KICAgIGxldCBmaWxlRGF0YSA9IHlpZWxkIHsKICAgICAgcHJvbWlzZTogZmlsZURhdGFQcm9taXNlLAogICAgICByZXNwb25zZTogewogICAgICAgIGFjdGlvbjogJ2NvbnRpbnVlJywKICAgICAgfQogICAgfTsKCiAgICAvLyBVc2UgYSBjaHVua2VkIHNlbmRpbmcgdG8gYXZvaWQgbWVzc2FnZSBzaXplIGxpbWl0cy4gU2VlIGIvNjIxMTU2NjAuCiAgICBsZXQgcG9zaXRpb24gPSAwOwogICAgd2hpbGUgKHBvc2l0aW9uIDwgZmlsZURhdGEuYnl0ZUxlbmd0aCkgewogICAgICBjb25zdCBsZW5ndGggPSBNYXRoLm1pbihmaWxlRGF0YS5ieXRlTGVuZ3RoIC0gcG9zaXRpb24sIE1BWF9QQVlMT0FEX1NJWkUpOwogICAgICBjb25zdCBjaHVuayA9IG5ldyBVaW50OEFycmF5KGZpbGVEYXRhLCBwb3NpdGlvbiwgbGVuZ3RoKTsKICAgICAgcG9zaXRpb24gKz0gbGVuZ3RoOwoKICAgICAgY29uc3QgYmFzZTY0ID0gYnRvYShTdHJpbmcuZnJvbUNoYXJDb2RlLmFwcGx5KG51bGwsIGNodW5rKSk7CiAgICAgIHlpZWxkIHsKICAgICAgICByZXNwb25zZTogewogICAgICAgICAgYWN0aW9uOiAnYXBwZW5kJywKICAgICAgICAgIGZpbGU6IGZpbGUubmFtZSwKICAgICAgICAgIGRhdGE6IGJhc2U2NCwKICAgICAgICB9LAogICAgICB9OwogICAgICBwZXJjZW50LnRleHRDb250ZW50ID0KICAgICAgICAgIGAke01hdGgucm91bmQoKHBvc2l0aW9uIC8gZmlsZURhdGEuYnl0ZUxlbmd0aCkgKiAxMDApfSUgZG9uZWA7CiAgICB9CiAgfQoKICAvLyBBbGwgZG9uZS4KICB5aWVsZCB7CiAgICByZXNwb25zZTogewogICAgICBhY3Rpb246ICdjb21wbGV0ZScsCiAgICB9CiAgfTsKfQoKc2NvcGUuZ29vZ2xlID0gc2NvcGUuZ29vZ2xlIHx8IHt9OwpzY29wZS5nb29nbGUuY29sYWIgPSBzY29wZS5nb29nbGUuY29sYWIgfHwge307CnNjb3BlLmdvb2dsZS5jb2xhYi5fZmlsZXMgPSB7CiAgX3VwbG9hZEZpbGVzLAogIF91cGxvYWRGaWxlc0NvbnRpbnVlLAp9Owp9KShzZWxmKTsK",
+              "ok": true,
+              "headers": [
+                [
+                  "content-type",
+                  "application/javascript"
+                ]
+              ],
+              "status": 200,
+              "status_text": ""
+            }
+          },
+          "base_uri": "https://localhost:8080/",
+          "height": 72
+        }
+      },
+      "source": [
+        "from google.colab import files\n",
+        "uploaded = files.upload()\n",
+        "data = np.loadtxt(\"regression.csv\", delimiter=\",\", skiprows=1, dtype={'names':(\"X\", \"Y\"), 'formats':('f', 'f')})\n",
+        "data"
+      ],
+      "execution_count": 41,
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "\n",
+              "     <input type=\"file\" id=\"files-6e9645f3-22bc-4a83-873e-4d164d770596\" name=\"files[]\" multiple disabled\n",
+              "        style=\"border:none\" />\n",
+              "     <output id=\"result-6e9645f3-22bc-4a83-873e-4d164d770596\">\n",
+              "      Upload widget is only available when the cell has been executed in the\n",
+              "      current browser session. Please rerun this cell to enable.\n",
+              "      </output>\n",
+              "      <script src=\"/nbextensions/google.colab/files.js\"></script> "
+            ],
+            "text/plain": [
+              "<IPython.core.display.HTML object>"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        },
+        {
+          "output_type": "stream",
+          "text": [
+            "Saving regression.csv to regression.csv\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "GK8AaKNMShBG",
+        "outputId": "04151736-7c39-4d17-fd8f-0f821bb33b1b",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "source": [
+        "np.savetxt(\"regression_saved.csv\", data, delimiter=\",\")\n",
+        "!ls -al regression_saved.csv"
+      ],
+      "execution_count": 51,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "-rw-r--r-- 1 root root 850 Mar 21 16:33 regression_saved.csv\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "OtRqlLUjShBH"
+      },
+      "source": [
+        "## 4. Inspecting"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "hCdNQ9LdShBH"
+      },
+      "source": [
+        "arr = np.random.random([5,2,3])"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "PrlTloJtShBH",
+        "outputId": "8ce35193-4d18-464b-96d4-f98580925525"
+      },
+      "source": [
+        "print(type(arr))\n",
+        "print(len(arr))\n",
+        "print(arr.shape)\n",
+        "print(arr.ndim)\n",
+        "print(arr.size)\n",
+        "print(arr.dtype)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "<class 'numpy.ndarray'>\n",
+            "5\n",
+            "(5, 2, 3)\n",
+            "3\n",
+            "30\n",
+            "float64\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ll__HZZAShBH"
+      },
+      "source": [
+        "## 5. Operations"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "v2r4x2usShBH"
+      },
+      "source": [
+        "### 5.1 Arithmetic"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "dD6wrlL2ShBH"
+      },
+      "source": [
+        "a = np.arange(1, 5)\n",
+        "b = np.arange(9, 5, -1)"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "bD5zmaaiShBI",
+        "outputId": "265f5d7f-7b62-4220-ecaa-341ba249a2cb"
+      },
+      "source": [
+        "print(a - b)\n",
+        "print(a * b)\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "[-8 -6 -4 -2]\n",
+            "[ 9 16 21 24]\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "XqG8AA4oShBI"
+      },
+      "source": [
+        "a = np.matrix(a)\n",
+        "b = np.matrix(b)"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "uqCAC4oYShBI",
+        "outputId": "e8fa8598-b255-4755-c47b-31286921edba"
+      },
+      "source": [
+        "a * b.T"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "matrix([[70]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 58
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "OwW-TYQ1ShBI",
+        "outputId": "0c4d8e44-cd3b-419c-ddbe-b583ac1ab00a"
+      },
+      "source": [
+        "a.T * b"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "matrix([[ 9,  8,  7,  6],\n",
+              "        [18, 16, 14, 12],\n",
+              "        [27, 24, 21, 18],\n",
+              "        [36, 32, 28, 24]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 59
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "nIzwheicShBI"
+      },
+      "source": [
+        "### 5.2 Comparison"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "avEnIBt6ShBI",
+        "outputId": "172f14b2-40d5-45b1-f7c7-5ac268df0f1a"
+      },
+      "source": [
+        "a = np.arange(1, 10).reshape(3,3)\n",
+        "b = np.arange(9, 0, -1).reshape(3,3)\n",
+        "print(a)\n",
+        "print(b)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "[[1 2 3]\n",
+            " [4 5 6]\n",
+            " [7 8 9]]\n",
+            "[[9 8 7]\n",
+            " [6 5 4]\n",
+            " [3 2 1]]\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "R2wtow0tShBJ",
+        "outputId": "5ff6d843-8929-4c31-86dd-eb3cdbd59d23"
+      },
+      "source": [
+        "a == b"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[False, False, False],\n",
+              "       [False,  True, False],\n",
+              "       [False, False, False]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 65
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "M74Vdg5xShBJ",
+        "outputId": "552bd724-2d0d-48af-fc05-85d5e8b8990b"
+      },
+      "source": [
+        "a > b"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[False, False, False],\n",
+              "       [False, False,  True],\n",
+              "       [ True,  True,  True]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 66
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "8mA86qfpShBJ"
+      },
+      "source": [
+        "### 5.3 Aggregate (sum, min, max, mean, median, std)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "SkhVvDeiShBJ",
+        "outputId": "632b5a13-c54d-4f09-f593-71b07faad9a6"
+      },
+      "source": [
+        "a.sum(), np.sum(a)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(45, 45)"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 67
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "95jUB6qWShBJ",
+        "outputId": "1c8f052a-7dc6-4e77-fdd6-2e67345ee528"
+      },
+      "source": [
+        "a.sum(axis=0), np.sum(a, axis=0)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(array([12, 15, 18]), array([12, 15, 18]))"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 68
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "PP93kmgEShBK",
+        "outputId": "44d26647-cf70-48fa-8743-f8c5fe3d879a"
+      },
+      "source": [
+        "a.sum(axis=1), np.sum(a, axis=1)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(array([ 6, 15, 24]), array([ 6, 15, 24]))"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 69
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "HRSOB-BRShBK"
+      },
+      "source": [
+        "## Broadcasting"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "2g-SnKKoShBK",
+        "outputId": "9dcad363-a0aa-49e1-e742-ece9ffead23e"
+      },
+      "source": [
+        "a = np.arange(1, 25).reshape(4, 6)\n",
+        "a"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[ 1,  2,  3,  4,  5,  6],\n",
+              "       [ 7,  8,  9, 10, 11, 12],\n",
+              "       [13, 14, 15, 16, 17, 18],\n",
+              "       [19, 20, 21, 22, 23, 24]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 70
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "JI8Ge4tMShBK",
+        "outputId": "2e36f9a4-9163-4935-c14c-0de11babea1d"
+      },
+      "source": [
+        "a + 100"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[101, 102, 103, 104, 105, 106],\n",
+              "       [107, 108, 109, 110, 111, 112],\n",
+              "       [113, 114, 115, 116, 117, 118],\n",
+              "       [119, 120, 121, 122, 123, 124]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 71
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "pv5IB9_5ShBK",
+        "outputId": "673c43cf-923c-41b5-ca1e-c07d65d03157"
+      },
+      "source": [
+        "b = np.arange(6)\n",
+        "b"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([0, 1, 2, 3, 4, 5])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 72
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "kGBax9WIShBL",
+        "outputId": "004b37b7-44b5-4adc-a32a-96df51492311"
+      },
+      "source": [
+        "a + b"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[ 1,  3,  5,  7,  9, 11],\n",
+              "       [ 7,  9, 11, 13, 15, 17],\n",
+              "       [13, 15, 17, 19, 21, 23],\n",
+              "       [19, 21, 23, 25, 27, 29]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 73
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "3Od9qiz5ShBL",
+        "outputId": "8606cf8e-55cc-41b3-dbb4-fa7b053cd260"
+      },
+      "source": [
+        "c = np.arange(4).reshape([4,1])\n",
+        "c"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[0],\n",
+              "       [1],\n",
+              "       [2],\n",
+              "       [3]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 74
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "qd2_qAtKShBL",
+        "outputId": "f7d936a4-3975-4fdc-803e-fec24b24925b"
+      },
+      "source": [
+        "a + c"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[ 1,  2,  3,  4,  5,  6],\n",
+              "       [ 8,  9, 10, 11, 12, 13],\n",
+              "       [15, 16, 17, 18, 19, 20],\n",
+              "       [22, 23, 24, 25, 26, 27]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 75
+        }
+      ]
+    }
+  ]
+}
