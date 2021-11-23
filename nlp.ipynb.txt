@@ -1,0 +1,311 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import nltk, os"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['a', 'man', 'in', 'the', 'house']"
+      ]
+     },
+     "execution_count": 11,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "s = 'a man in the house' # untokenized string\n",
+    "t = ['a', 'man', 'in', 'the', 'house'] # tokenized seqeuence of words as a list"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "<Text: a man in the house...>"
+      ]
+     },
+     "execution_count": 15,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a = nltk.Text(t)\n",
+    "a"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "<Text: a man in the house...>"
+      ]
+     },
+     "execution_count": 16,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "nltk.Text(s.split())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "raw = open(os.getcwd()+r'/06_01.txt', encoding = 'utf8').read()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'str'>\n",
+      "1154507\n",
+      "The Project Gutenberg EBook of Crime and Punishment, by Fyodor Dostoevsky\n",
+      "\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(type(raw))\n",
+    "print(len(raw))\n",
+    "print(raw[:75])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'list'>\n",
+      "257726\n",
+      "['The', 'Project', 'Gutenberg', 'EBook', 'of', 'Crime', 'and', 'Punishment', ',', 'by']\n"
+     ]
+    }
+   ],
+   "source": [
+    "tokens = nltk.word_tokenize(raw)\n",
+    "print(type(tokens))\n",
+    "print(len(tokens))\n",
+    "print(tokens[:10])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'nltk.text.Text'>\n",
+      "['The', 'Project', 'Gutenberg', 'EBook', 'of', 'Crime', 'and', 'Punishment', ',', 'by']\n",
+      "Katerina Ivanovna; Pyotr Petrovitch; Pulcheria Alexandrovna; Avdotya\n",
+      "Romanovna; Rodion Romanovitch; Marfa Petrovna; Sofya Semyonovna; old\n",
+      "woman; Project Gutenberg-tm; Porfiry Petrovitch; Amalia Ivanovna;\n",
+      "great deal; young man; Nikodim Fomitch; Ilya Petrovitch; Project\n",
+      "Gutenberg; Andrey Semyonovitch; Hay Market; Dmitri Prokofitch; Good\n",
+      "heavens\n"
+     ]
+    }
+   ],
+   "source": [
+    "text = nltk.Text(tokens)\n",
+    "print(type(text))\n",
+    "print(text[:10])\n",
+    "text.collocations()\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Displaying 25 of 162 matches:\n",
+      "and were more frequent in periods of great strain . In 1859 he was allowed to r\n",
+      "ndency and of late she had read with great interest a book she got through Mr. \n",
+      " the bosom of her family ... . And a great deal more ... . Quite excusable , si\n",
+      "that you had heard that Dounia had a great deal to put up with in the Svidrigra\n",
+      "g will she has . Dounia can endure a great deal and even in the most difficult \n",
+      " that letter she reproached him with great heat and indignation for the basenes\n",
+      "putation ; they had seen and known a great deal more than Mr. Svidrigailov had \n",
+      "n other people ’ s . In my opinion a great deal , a very great deal of all this\n",
+      " In my opinion a great deal , a very great deal of all this was unnecessary ; b\n",
+      " . He is a very busy man and is in a great hurry to get to Petersburg , so that\n",
+      " me that , though he is not a man of great education , he is clever and seems t\n",
+      " very well . Of course , there is no great love either on his side , or on hers\n",
+      "tted the matter has been arranged in great haste . Besides he is a man of great\n",
+      "great haste . Besides he is a man of great prudence and he will see , to be sur\n",
+      "d that she is ready to put up with a great deal , if only their future relation\n",
+      " off for Petersburg , where he has a great deal of business , and he wants to o\n",
+      "a or I breathed a word to him of the great hopes we have of his helping us to p\n",
+      "ites that ‘ Dounia can put up with a great deal. ’ I know that very well . I kn\n",
+      "at , that ‘ Dounia can put up with a great deal. ’ If she could put up with Mr.\n",
+      "it , she certainly can put up with a great deal . And now mother and she have t\n",
+      "e young , and she was walking in the great heat bareheaded and with no parasol \n",
+      "f the skirt , close to the waist : a great piece was rent and hanging loose . A\n",
+      "ts or conversations . He worked with great intensity without sparing himself , \n",
+      " uproarious and was reputed to be of great physical strength . One night , when\n",
+      ". His legs felt suddenly heavy and a great drowsiness came upon him . He turned\n"
+     ]
+    }
+   ],
+   "source": [
+    "text.concordance('great', 79, 25)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[(' ', 198098), ('e', 115855), ('t', 85539), ('a', 75266), ('o', 68338)]\n",
+      "[('e', 117092), ('t', 87996), ('a', 77916), ('o', 69326), ('n', 65617)]\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "['e', 't', 'a', 'o', 'n']"
+      ]
+     },
+     "execution_count": 22,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "raw = nltk.corpus.gutenberg.raw('melville-moby_dick.txt')\n",
+    "fdist = nltk.FreqDist(raw)\n",
+    "print(fdist.most_common(5))\n",
+    "\n",
+    "fdist = nltk.FreqDist(ch.lower() for ch in raw if ch.isalpha())\n",
+    "print(fdist.most_common(5))\n",
+    "[char for (char, count) in fdist.most_common(5)]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['zymosis',\n",
+       " 'zymosterol',\n",
+       " 'zymosthenic',\n",
+       " 'zymotechnic',\n",
+       " 'zymotechnical',\n",
+       " 'zymotechnics',\n",
+       " 'zymotechny',\n",
+       " 'zymotic',\n",
+       " 'zymotically',\n",
+       " 'zymotize',\n",
+       " 'zymotoxic',\n",
+       " 'zymurgy',\n",
+       " 'Zyrenian',\n",
+       " 'Zyrian',\n",
+       " 'Zyryan',\n",
+       " 'zythem',\n",
+       " 'Zythia',\n",
+       " 'zythum',\n",
+       " 'Zyzomys']"
+      ]
+     },
+     "execution_count": 23,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "nltk.corpus.words.words('en')[-20:-1]\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "235886"
+      ]
+     },
+     "execution_count": 24,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "len(nltk.corpus.words.words('en'))"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 1
+}
