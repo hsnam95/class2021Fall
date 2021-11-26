@@ -1,0 +1,6 @@
+It's time to examine a fundamental data type that we've been studiously avoiding so far.
+In earlier chapters we focused on a text as a list of words.
+We didn't look too closely at words and how they are handled in the programming language.
+By using NLTK's corpus interface we were able to ignore the files that these texts had come from.
+The contents of a word, and of a file, are represented by programming languages as a fundamental data type known as a string.
+In this section we explore strings in detail, and show the connection between strings, words, texts and files.
